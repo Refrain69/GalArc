@@ -33,3 +33,4 @@ jobs:
         with:
           name: GalArc-ci-${{ matrix.runtime }}
           path: GalArc/bin/Release/net10.0/${{ matrix.runtime }}/publish
+          retention-days: 5
