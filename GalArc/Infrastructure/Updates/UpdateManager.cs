@@ -11,7 +11,7 @@ namespace GalArc.Infrastructure.Updates;
 
 internal static class UpdateManager
 {
-    private const string ApiUrl = "https://api.github.com/repos/detached64/GalArc/releases/latest";
+    private const string ApiUrl = "https://api.github.com/repos/Refrain69/GalArc/releases/latest";
 
     private static readonly Assembly CurrentAssembly = Assembly.GetExecutingAssembly();
 
