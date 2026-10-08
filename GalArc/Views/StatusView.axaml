@@ -5,6 +5,7 @@
         xmlns:cv="using:GalArc.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:i="using:GalArc.I18n"
+        xmlns:log="using:GalArc.Infrastructure.Logging"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:GalArc.ViewModels"
         Title="{x:Static i:GuiStrings.Status}"
@@ -65,7 +66,7 @@
                      SelectedItems="{Binding SelectedLogEntries}"
                      SelectionMode="Multiple">
                 <ListBox.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="log:LogEntry">
                         <TextBlock Foreground="{Binding Level, Converter={StaticResource LogLevelToBrush}}" Text="{Binding}" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -5,6 +5,7 @@
              xmlns:i="using:GalArc.I18n"
              xmlns:local="using:GalArc.Models.Formats.Artemis"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:text="using:System.Text"
              d:DesignHeight="450"
              d:DesignWidth="800"
              x:DataType="local:ArtemisPFSUnpackOptions"
@@ -20,7 +21,7 @@
                   ItemsSource="{Binding Encodings}"
                   SelectedItem="{Binding Encoding}">
             <ComboBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="text:Encoding">
                     <TextBlock Text="{Binding EncodingName}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>

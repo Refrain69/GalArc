@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="using:GalArc.I18n"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:scg="using:System.Globalization"
              xmlns:vm="using:GalArc.ViewModels"
              d:DesignHeight="450"
              d:DesignWidth="800"
@@ -25,7 +26,7 @@
                   ItemsSource="{Binding Themes}"
                   SelectedItem="{Binding Theme, Mode=TwoWay}">
             <ComboBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="ThemeVariant">
                     <TextBlock Text="{Binding Converter={StaticResource ThemeVariantTranslationConverter}}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -35,7 +36,7 @@
                   ItemsSource="{Binding Languages}"
                   SelectedItem="{Binding Language, Mode=TwoWay}">
             <ComboBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="scg:CultureInfo">
                     <TextBlock Text="{Binding DisplayName}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>

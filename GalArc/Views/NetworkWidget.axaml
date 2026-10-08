@@ -4,6 +4,7 @@
              xmlns:c="using:GalArc.Controls"
              xmlns:cv="using:GalArc.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:e="using:GalArc.Enums"
              xmlns:i="using:GalArc.I18n"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:GalArc.ViewModels"
@@ -26,7 +27,7 @@
                   ItemsSource="{Binding ProxyTypes}"
                   SelectedItem="{Binding ProxyType, Mode=TwoWay}">
             <ComboBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="e:ProxyType">
                     <TextBlock Text="{Binding Converter={StaticResource ProxyTypeTranslationConverter}}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>

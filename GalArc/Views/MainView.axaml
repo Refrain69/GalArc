@@ -6,6 +6,7 @@
         xmlns:cv="using:GalArc.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:e="using:GalArc.Enums"
+        xmlns:formats="using:GalArc.Models.Formats.Commons"
         xmlns:i="using:GalArc.I18n"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:s="using:GalArc.Infrastructure.Settings"
@@ -98,7 +99,7 @@
                               ItemsSource="{Binding UnpackFormats}"
                               SelectedItem="{Binding SelectedUnpackFormat}">
                         <ComboBox.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="formats:ArcFormat">
                                 <TextBlock IsVisible="{Binding $parent[ComboBox].SelectedItem, Converter={x:Static ObjectConverters.IsNotNull}}">
                                     <TextBlock.Text>
                                         <MultiBinding Converter="{StaticResource DisplayFormatConverter}">
@@ -115,7 +116,7 @@
                               ItemsSource="{Binding PackFormats}"
                               SelectedItem="{Binding SelectedPackFormat}">
                         <ComboBox.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="formats:ArcFormat">
                                 <TextBlock IsVisible="{Binding $parent[ComboBox].SelectedItem, Converter={x:Static ObjectConverters.IsNotNull}}">
                                     <TextBlock.Text>
                                         <MultiBinding Converter="{StaticResource DisplayFormatConverter}">
